@@ -46,3 +46,17 @@ app.post('/addHero', function(req,res){
     }//end else
   });//end newHero save
 });//end addHero
+
+//view all heroes
+app.get('/viewAll', function(req, res) {
+  Hero.find({}, function(err, heroResults) {
+    if(err){
+      console.log('error occurred:', err);
+      res.sendStatus(500);
+    }//end if
+    else{
+      console.log("Hero Results:",heroResults);
+      res.send(heroResults);
+    }//end else
+  });//end hero find
+});//end viewAll
