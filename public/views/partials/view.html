@@ -2,5 +2,6 @@
 <div>
   <p ng-repeat='hero in heroes'>
     {{hero.alias}} who's name is {{ hero.first_name }} {{hero.last_name}} lives in {{hero.city}} and has {{hero.power_name}} super power.
+    <button ng-click='deleteHero()'>Delete</button>
   </p>
 </div>

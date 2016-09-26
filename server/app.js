@@ -60,3 +60,10 @@ app.get('/viewAll', function(req, res) {
     }//end else
   });//end hero find
 });//end viewAll
+
+//delete a hero
+app.delete('/deleteHero/:id', function(req,res){
+  console.log("req.params.id",req.params.id);  Hero.find({_id:req.params.id}).remove(function(err,result){
+    res.send(result);
+  });//end function
+});//end deleteHero
